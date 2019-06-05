@@ -1,0 +1,15 @@
+[Unit]
+Description=CSO Traffic Generator - Mixed Traffic
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=juniper
+WorkingDirectory=/tmp
+ExecStart=/bin/bash /usr/bin/traffic-generator.sh
+
+[Install]
+WantedBy=multi-user.target
